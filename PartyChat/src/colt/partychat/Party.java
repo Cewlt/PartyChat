@@ -9,7 +9,6 @@ public class Party {
 	
 	private static List<Party> activeParties = new ArrayList<Party>();
 	
-	/* Note: the partyOwner does not exist within partyParticipants. */
 	private Player partyOwner;
 	private List<Player> partyParticipants;
 	private List<Player> pendingInvites;
