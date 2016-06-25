@@ -29,7 +29,7 @@ public class Party {
 		return this.partyParticipants;
 	}
 
-	/* We use varags here for the sake of fluency. */
+	// varargs for the sake of things
 	public void addPartyParticpants(Player... players) {
 		for(Player pl : players) {
 			if(this.partyParticipants.contains(pl)) {
