@@ -1,0 +1,11 @@
+name: PartyChat
+main: colt.partychat.PartyChat
+description: Colt's PartyChat.
+version: 1.1
+commands:
+  pc:
+   description: Main PartyChat Command
+   usage: /<command> help 
+  party:
+   description: Offset help command for PartyChat
+   usage: /<command>

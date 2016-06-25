@@ -1,0 +1,9 @@
+# -  party-chat-format - the format to use for PartyChat messages.
+# -  socialspy-format - the format to use for Party SocialSpy reports.
+# xx
+# -  @sender - the player sending/involved with the command
+# -  @args - the arguments involved with the command, such as the message
+
+party-chat-format: "&b&l[Party] &a(@sender&a): @args"
+
+socialspy-format: "&e&l[Party-Spy] &a(@sender&a): @args"
