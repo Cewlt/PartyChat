@@ -10,18 +10,13 @@ import colt.partychat.PartyChat;
 import colt.partychat.Util;
 
 public class EventPlayerChat implements Listener {
-	/*
-	 * The (primary) function of this class is to handle "Direct Party Chat"
-	 */
-	 
 	private Messenger msg = Messenger.getMessenger();
 	private Util util = new Util();
 
 	public EventPlayerChat(PartyChat plugin) {
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
-	
-	/* No need to over-complicate this, not very pretty. */
+
 	@EventHandler
 	public void playerChatEvent(AsyncPlayerChatEvent event) {
 		if(msg.getDirectChatPlayers().contains(event.getPlayer())) {
