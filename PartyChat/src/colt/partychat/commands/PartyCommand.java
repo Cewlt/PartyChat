@@ -15,20 +15,9 @@ import colt.partychat.Party;
 import colt.partychat.Util;
 
 public class PartyCommand implements CommandExecutor {
-	
-	/*
-	 * This class contains our commands and their implementations.
-	 * Due to the large nature of this project, a odd and somewhat messy
-	 * approach is used to handle each argument.
-	 * 
-	 * Despite this, the code is fluent, manageable and operates very well.
-	 */
-
 	private Messenger msg = Messenger.getMessenger();
 	private Util util = new Util();
 
-	/* This manages our sub commands and args. 
-	 * Not the most pretty system, but works wells.*/
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("party")) {
@@ -256,8 +245,6 @@ public class PartyCommand implements CommandExecutor {
 		return true;
 	}
 	
-	/* We assure everything is valid and proceed to create a new Party class,
-	 * which adds our new Party class to our global Party list. */
 	public boolean create(Player sender, String[] args) {
 		if(args.length != 1) {
 			msg.sendHelp(sender, "create");
@@ -272,14 +259,6 @@ public class PartyCommand implements CommandExecutor {
 		return true;
 	}
 
-	/* Handle our quick chat command (/pc m <msg>) 
-	 * Check our args and assure everything is valid.
-	 * 
-	 * The loop used below to is somewhat confusing. Breakdown: 
-	 * We create a new String List and begin looping through our args
-	 * adding them to the list. We start the loop from "1" 
-	 * Because of the arguments nature (/pc m <msg>)
-	 *      (args)                          0 1    */
 	public boolean quickChat(Player sender, String[] args) {
 		if (args.length <= 1) {
 			msg.sendHelp(sender, "quickChat");
@@ -301,8 +280,6 @@ public class PartyCommand implements CommandExecutor {
 		return true;
 	}
 	
-	/* Check for staff permission and execute the reload 
-	 * out of our Util class. */
 	public boolean reload(Player sender, String[] args) {
 		if(!sender.hasPermission("partychat.relaod")) {
 			sender.sendMessage(msg.format("&cYou lack the required permission node!"));
