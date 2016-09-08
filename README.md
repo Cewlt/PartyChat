@@ -8,4 +8,5 @@ A small but feature-rich Party system. Users can create a "Party" and invite oth
 
 ### Permissions:
 partychat.reload (reload the config)
-partychat.socialspy (/pc socialspy)
+
+partychat.socialspy (enable/disable socialspy - /pc socialspy)
