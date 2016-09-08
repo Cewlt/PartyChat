@@ -11,24 +11,13 @@ import colt.partychat.PartyChat;
 import colt.partychat.Util;
 
 public class EventPlayerQuit implements Listener {
-	
-	/*
-	 * The primary function of this class is to 
-	 * handle people who quit while still existing in Lists.
-	 */
-	
 	private Messenger msg = Messenger.getMessenger();
 	private Util util = new Util();
 
-	/* Register our events, keep our main class looking pretty. */
 	public EventPlayerQuit(PartyChat plugin) {
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 	}
 	
-	/* The goal here is to keep it as efficient as possible. 
-	 * We check if the quiting player exists in any parties
-	 * either as a member or leader 
-	 * along with checks for DirectChat and SocialSpy. */
 	@EventHandler
 	public void playerQuitEvent(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
