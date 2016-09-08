@@ -3,7 +3,6 @@ package colt.partychat;
 import org.bukkit.entity.Player;
 
 public class Util {
-	
 	private PartyChat partyChat;
 	
 	public Util() {}
