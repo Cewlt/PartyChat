@@ -7,7 +7,6 @@ import colt.partychat.commands.PartyCommand;
 import colt.partychat.listeners.EventPlayerChat;
 
 public class PartyChat extends JavaPlugin implements Listener {
-
 	private Messenger msg;
 	private PartyChat partyChat;
 	
