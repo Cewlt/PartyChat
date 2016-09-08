@@ -6,7 +6,6 @@ import java.util.List;
 import org.bukkit.entity.Player;
 
 public class Party {
-	
 	private static List<Party> activeParties = new ArrayList<Party>();
 	
 	private Player partyOwner;
