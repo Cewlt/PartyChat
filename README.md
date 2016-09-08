@@ -7,6 +7,6 @@ A small but feature-rich Party system. Users can create a "Party" and invite oth
 /party (offset command)
 
 ### Permissions:
-partychat.reload (reload the config)
+partychat.reload (reload the config - /pc reload)
 
 partychat.socialspy (enable/disable socialspy - /pc socialspy)
