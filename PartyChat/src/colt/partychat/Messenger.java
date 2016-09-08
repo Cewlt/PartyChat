@@ -7,7 +7,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class Messenger {
-
 	private List<Player> directChatPlayers = new ArrayList<>();
 	private List<Player> socialSpyStaff = new ArrayList<>();
 	
