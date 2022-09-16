@@ -1,5 +1,7 @@
 package colt.partychat;
 
+import colt.partychat.Party;
+import colt.partychat.PartyChat;
 import org.bukkit.entity.Player;
 
 public class Util {

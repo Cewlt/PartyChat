@@ -3,7 +3,7 @@ package colt.partychat.commands;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +16,8 @@ import colt.partychat.Util;
 
 public class PartyCommand implements CommandExecutor {
 	private Messenger msg = Messenger.getMessenger();
-	private Util util = new Util();
+
+	public Util util = new Util();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -53,9 +54,7 @@ public class PartyCommand implements CommandExecutor {
 				case "socialspy":
 					return socialspy(player, args);
 				case "reload":
-					util.reloadConfig();
-					player.sendMessage(msg.format("&aConfiguration file reloaded."));
-					return true;
+					return reload(player, args);
 				default:
 					msg.sendHelp(player);
 					return true;
@@ -281,7 +280,7 @@ public class PartyCommand implements CommandExecutor {
 	}
 	
 	public boolean reload(Player sender, String[] args) {
-		if(!sender.hasPermission("partychat.relaod")) {
+		if(!sender.hasPermission("partychat.reload")) {
 			sender.sendMessage(msg.format("&cYou lack the required permission node!"));
 			return true;
 		}
