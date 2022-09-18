@@ -24,8 +24,8 @@ public class PartyChat extends JavaPlugin implements Listener {
 	}
 	
 	public void uglyOnEnable() {
-		partyChat = this;
 		saveDefaultConfig();
+		partyChat = this;
 		msg = Messenger.getMessenger(partyChat);
 		new EventPlayerChat(this);
 		new Util(partyChat);

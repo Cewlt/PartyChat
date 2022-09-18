@@ -39,9 +39,4 @@ public class Util {
 		}
 		return false;
 	}
-	
-	public void reloadConfig() {
-		partyChat.reloadConfig();
-		partyChat.saveConfig();
-	}
 }

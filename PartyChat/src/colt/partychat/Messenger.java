@@ -41,42 +41,36 @@ public class Messenger {
 		if(player.hasPermission("partychat.socialspy")) {
 			sendHelp(player, "socialspy");
 		}
-		if(player.hasPermission("partychat.reload")) {
-			sendHelp(player, "reload");
-		}
 	}
 	
 	public void sendHelp(Player player, String cmd) {
 		switch(cmd) {
 		case "quickChat":
-			player.sendMessage(format("&a/pc m <message> &7 Quickly send a message to party members"));
+			player.sendMessage(format("&a/pc m <message> &7Quickly send a message to your party"));
 			return;
 		case "invite":
-			player.sendMessage(format("&a/pc invite <player> &7 Invite someone to your Party"));
+			player.sendMessage(format("&a/pc invite <player> &7Invite someone to your Party"));
 			return;
 		case "directChat":
-			player.sendMessage(format("&a/pc directchat &7 Typing in chat sends the text directly to party chat (enable/disable)"));
+			player.sendMessage(format("&a/pc directchat &7Text sent in normal chat will get sent directly to your Party (enable/disable)"));
 			return;
 		case "kick":
-			player.sendMessage(format("&a/pc kick <player> &7 Kick a player from your party"));
+			player.sendMessage(format("&a/pc kick <player> &7Kick a player from your Party"));
 			return;
 		case "leave":
-			player.sendMessage(format("&a/pc leave &7 Leave your current party"));
+			player.sendMessage(format("&a/pc leave &7Leave your current Party"));
 			return;
 		case "create":
-			player.sendMessage(format("&a/pc create &7 Create a new Party"));
+			player.sendMessage(format("&a/pc create &7Create a new Party"));
 			return;
 		case "disband":
-			player.sendMessage(format("&a/pc disband &7 Disband your Party"));
+			player.sendMessage(format("&a/pc disband &7Disband your Party"));
 			return;
 		case "accept":
-			player.sendMessage(format("&a/pc accept <player> &7 Accept a Party invitation from <player>"));
+			player.sendMessage(format("&a/pc accept <player> &7Accept a Party invitation from <player>"));
 			return;
 		case "socialspy":
-			player.sendMessage(format("&c(A) &a/pc socialspy &7 Spy on the server's party chats (enable/disable)"));
-			return;
-		case "reload":
-			player.sendMessage(format("&c(A) &a/pc reload &7 Reload the configuration file for PartyChat"));
+			player.sendMessage(format("&c(A) &a/pc socialspy &7Spy on the server's party chats (enable/disable)"));
 		}
 	}
 	

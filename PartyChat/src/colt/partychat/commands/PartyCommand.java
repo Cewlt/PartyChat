@@ -16,7 +16,6 @@ import colt.partychat.Util;
 
 public class PartyCommand implements CommandExecutor {
 	private Messenger msg = Messenger.getMessenger();
-
 	public Util util = new Util();
 
 	@Override
@@ -53,8 +52,6 @@ public class PartyCommand implements CommandExecutor {
 					return directChat(player, args);
 				case "socialspy":
 					return socialspy(player, args);
-				case "reload":
-					return reload(player, args);
 				default:
 					msg.sendHelp(player);
 					return true;
@@ -70,18 +67,17 @@ public class PartyCommand implements CommandExecutor {
 			return true;
 		}
 		if(args.length != 1) {
-			msg.sendHelp(sender, "leave");
+			msg.sendHelp(sender, "socialspy");
 			return true;
 		}
 		if(msg.getSocialSpyStaff().contains(sender)) {
 			sender.sendMessage(msg.format("&c[Party] SocialSpy disabled."));
 			msg.getSocialSpyStaff().remove(sender);
-			return true;
 		} else {
 			sender.sendMessage(msg.format("&a[Party] SocialSpy enabled."));
 			msg.getSocialSpyStaff().add(sender);
-			return true;
 		}
+		return true;
 	}
 	
 	public boolean leave(Player sender, String[] args) {
@@ -238,9 +234,8 @@ public class PartyCommand implements CommandExecutor {
 		Party party = util.getPartyOfPlayer(sender);
 		party.chat(msg.format("&c[Party] Party Disbanded"));
 		party.disbandParty();
-		if(msg.getDirectChatPlayers().contains(sender)) {
+		if(msg.getDirectChatPlayers().contains(sender)) 
 			msg.getDirectChatPlayers().remove(sender);
-		}
 		return true;
 	}
 	
@@ -278,15 +273,4 @@ public class PartyCommand implements CommandExecutor {
 		msg.partySocialSpy(sender, party, messageArgs);
 		return true;
 	}
-	
-	public boolean reload(Player sender, String[] args) {
-		if(!sender.hasPermission("partychat.reload")) {
-			sender.sendMessage(msg.format("&cYou lack the required permission node!"));
-			return true;
-		}
-		util.reloadConfig();
-		sender.sendMessage(msg.format("&aPartyChat configuration reloaded."));
-		return true;
-	}
-
 }
