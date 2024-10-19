@@ -2,7 +2,7 @@
 
 A small but feature-rich Party system. Users can create a "Party" and invite others to it, allowing for private chats between each other.
 
-### Getting started
+## Getting started
 
 ### Commands
 ![Screenshot of commands](https://i.imgur.com/OPnKLQF.png)
